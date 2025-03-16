@@ -1,10 +1,9 @@
 package com.example.meditracker;
 
+import com.example.meditracker.MedicineAdapter;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +22,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_ADD_MEDICINE = 1;
-    private static final int REQUEST_CODE_EDIT_MEDICINE = 2; // Added for edit
+    private static final int REQUEST_CODE_EDIT_MEDICINE = 2;
     private FirebaseAuth auth;
     private FirebaseFirestore db;
     private TextView tvWelcome, tvExpiryAlerts;
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         tvWelcome.setText("Welcome, " + user.getEmail());
 
         medicineList = new ArrayList<>();
-        medicineAdapter = new MedicineAdapter(medicineList, this::launchEditMedicineActivity); // Pass click listener
+        medicineAdapter = new MedicineAdapter(medicineList, this::launchEditMedicineActivity);
         rvMedicineReminders.setLayoutManager(new LinearLayoutManager(this));
         rvMedicineReminders.setAdapter(medicineAdapter);
 
@@ -69,13 +68,13 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(intent, REQUEST_CODE_ADD_MEDICINE);
         });
 
-        // Optionally keep btnEditMedicine as a hint, or remove it if editing is via RecyclerView
         btnEditMedicine.setOnClickListener(v -> {
             Toast.makeText(this, "Click a medicine in the list to edit", Toast.LENGTH_SHORT).show();
         });
 
         btnSettings.setOnClickListener(v -> {
-            Toast.makeText(this, "Settings feature coming soon!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intent);
         });
 
         btnLogout.setOnClickListener(v -> {
@@ -117,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                             String schedule = document.getString("schedule");
                             String startDate = document.getString("startDate");
                             String endDate = document.getString("endDate");
-                            String medicineId = document.getId(); // Get document ID
+                            String medicineId = document.getId();
 
                             if (schedule != null && schedule.startsWith(today)) {
                                 medicineList.add(new Medicine(name, schedule, startDate, endDate, medicineId));
@@ -147,76 +146,6 @@ public class MainActivity extends AppCompatActivity {
             return daysDiff <= 7 && daysDiff >= 0;
         } catch (Exception e) {
             return false;
-        }
-    }
-}
-
-class Medicine {
-    private String name;
-    private String schedule;
-    private String startDate;
-    private String endDate;
-    private String medicineId; // Added to store document ID
-
-    public Medicine(String name, String schedule, String startDate, String endDate, String medicineId) {
-        this.name = name;
-        this.schedule = schedule;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.medicineId = medicineId;
-    }
-
-    public String getName() { return name; }
-    public String getSchedule() { return schedule; }
-    public String getStartDate() { return startDate; }
-    public String getEndDate() { return endDate; }
-    public String getMedicineId() { return medicineId; } // Getter for medicineId
-}
-
-class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHolder> {
-    private List<Medicine> medicines;
-    private OnMedicineClickListener listener;
-
-    // Interface for click handling
-    public interface OnMedicineClickListener {
-        void onMedicineClick(String medicineId);
-    }
-
-    public MedicineAdapter(List<Medicine> medicines, OnMedicineClickListener listener) {
-        this.medicines = medicines;
-        this.listener = listener;
-    }
-
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        Medicine medicine = medicines.get(position);
-        holder.text1.setText(medicine.getName());
-        holder.text2.setText("Start: " + medicine.getStartDate() + " | Due: " + medicine.getSchedule() + " | End: " + medicine.getEndDate());
-        holder.itemView.setOnClickListener(v -> {
-            if (listener != null) {
-                listener.onMedicineClick(medicine.getMedicineId());
-            }
-        });
-    }
-
-    @Override
-    public int getItemCount() {
-        return medicines.size();
-    }
-
-    static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView text1, text2;
-
-        ViewHolder(View itemView) {
-            super(itemView);
-            text1 = itemView.findViewById(android.R.id.text1);
-            text2 = itemView.findViewById(android.R.id.text2);
         }
     }
 }
