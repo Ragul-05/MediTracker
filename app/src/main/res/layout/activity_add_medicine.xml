@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#E8F5E9"> <!-- Light green background -->
+    android:background="@color/background_light">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:text="Add Medicine"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#1B5E20"
+            android:textColor="@color/primary_dark"
             android:gravity="center"
             android:layout_marginBottom="20dp"/>
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="Medicine Name"
             android:textSize="16sp"
-            android:textColor="#212121"
+            android:textColor="@color/text_primary"
             android:layout_marginBottom="4dp"/>
         <EditText
             android:id="@+id/et_medicine_name"
@@ -37,7 +37,9 @@
             android:hint="Enter medicine name"
             android:inputType="text"
             android:padding="12dp"
-            android:backgroundTint="#B0BEC5"
+            android:background="@drawable/input_bg"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
             android:layout_marginBottom="20dp"/>
 
         <!-- Dosage -->
@@ -46,7 +48,7 @@
             android:layout_height="wrap_content"
             android:text="Dosage"
             android:textSize="16sp"
-            android:textColor="#212121"
+            android:textColor="@color/text_primary"
             android:layout_marginBottom="4dp"/>
         <EditText
             android:id="@+id/et_dosage"
@@ -55,7 +57,9 @@
             android:hint="Enter dosage (e.g., 500mg)"
             android:inputType="text"
             android:padding="12dp"
-            android:backgroundTint="#B0BEC5"
+            android:background="@drawable/input_bg"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
             android:layout_marginBottom="20dp"/>
 
         <!-- Quantity -->
@@ -64,7 +68,7 @@
             android:layout_height="wrap_content"
             android:text="Quantity"
             android:textSize="16sp"
-            android:textColor="#212121"
+            android:textColor="@color/text_primary"
             android:layout_marginBottom="4dp"/>
         <EditText
             android:id="@+id/et_quantity"
@@ -73,7 +77,9 @@
             android:hint="Enter quantity"
             android:inputType="number"
             android:padding="12dp"
-            android:backgroundTint="#B0BEC5"
+            android:background="@drawable/input_bg"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
             android:layout_marginBottom="20dp"/>
 
         <!-- Time Picker Button -->
@@ -82,8 +88,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Select Time"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
             android:layout_marginBottom="20dp"/>
 
         <!-- Start Date Picker Button -->
@@ -92,8 +101,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Select Start Date"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
             android:layout_marginBottom="20dp"/>
 
         <!-- End Date Picker Button -->
@@ -102,8 +114,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Select End Date"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
             android:layout_marginBottom="20dp"/>
 
         <!-- Frequency Spinner -->
@@ -112,13 +127,13 @@
             android:layout_height="wrap_content"
             android:text="Frequency"
             android:textSize="16sp"
-            android:textColor="#212121"
+            android:textColor="@color/text_primary"
             android:layout_marginBottom="4dp"/>
         <Spinner
             android:id="@+id/sp_frequency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#B0BEC5"
+            android:background="@drawable/input_bg"
             android:layout_marginBottom="20dp"/>
 
         <!-- Save Button -->
@@ -127,8 +142,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
             android:layout_marginBottom="20dp"/>
 
         <!-- Back Button -->
@@ -137,8 +155,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Back"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
             android:layout_marginTop="20dp"/>
 
     </LinearLayout>

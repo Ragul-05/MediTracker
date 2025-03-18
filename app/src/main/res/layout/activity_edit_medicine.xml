@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#E8F5E9">
+    android:background="@color/background_light">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,31 +17,131 @@
             android:text="Edit Medicine"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#212121"
+            android:textColor="@color/text_primary"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"/>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Medicine Name" android:textSize="16sp"/>
-        <EditText android:id="@+id/et_medicine_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="e.g., Paracetamol" android:padding="12dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medicine Name"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp"/>
+        <EditText
+            android:id="@+id/et_medicine_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g., Paracetamol"
+            android:padding="12dp"
+            android:background="@drawable/input_bg"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dosage" android:textSize="16sp"/>
-        <EditText android:id="@+id/et_dosage" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="e.g., 500mg" android:padding="12dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dosage"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp"/>
+        <EditText
+            android:id="@+id/et_dosage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g., 500mg"
+            android:padding="12dp"
+            android:background="@drawable/input_bg"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:inputType="text"
+            android:layout_marginBottom="16dp"/>
 
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Quantity" android:textSize="16sp"/>
-        <EditText android:id="@+id/et_quantity" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="e.g., 30" android:padding="12dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="4dp"/>
+        <EditText
+            android:id="@+id/et_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g., 30"
+            android:padding="12dp"
+            android:background="@drawable/input_bg"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:inputType="number"
+            android:layout_marginBottom="16dp"/>
 
-        <Button android:id="@+id/btn_time" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Select Time"/>
+        <Button
+            android:id="@+id/btn_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Time"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp"/>
 
-        <Button android:id="@+id/btn_start_date" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Select Start Date"/>
+        <Button
+            android:id="@+id/btn_start_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Start Date"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp"/>
 
-        <Button android:id="@+id/btn_end_date" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Select End Date"/>
+        <Button
+            android:id="@+id/btn_end_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select End Date"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp"/>
 
-        <Spinner android:id="@+id/sp_frequency" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <Spinner
+            android:id="@+id/sp_frequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:layout_marginBottom="16dp"/>
 
-        <Button android:id="@+id/btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Save Changes"/>
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Changes"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp"/>
 
-        <Button android:id="@+id/btn_delete" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Delete Medicine"/>
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Medicine"
+            android:background="@drawable/button_bg_red"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"/>
     </LinearLayout>
 </ScrollView>
-
-

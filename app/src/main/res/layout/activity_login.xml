@@ -3,80 +3,100 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="#E8F5E9">
+    android:background="@color/background_light">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="24dp">
 
-        <!-- Login Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="Welcome Back!"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#212121"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30dp"/>
+            android:textColor="@color/primary_dark"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"/>
 
-        <!-- Email -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
             android:textSize="16sp"
-            android:textColor="#212121"
-        android:layout_marginBottom="4dp"/>
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="6dp"/>
+
         <EditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter email"
+            android:layout_height="50dp"
+            android:hint="Enter your email"
             android:inputType="textEmailAddress"
-            android:padding="12dp"
-            android:backgroundTint="#B0BEC5"
-        android:layout_marginBottom="20dp"/>
+            android:padding="14dp"
+            android:background="@drawable/edittext_background"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:layout_marginBottom="20dp"/>
 
-        <!-- Password -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password"
             android:textSize="16sp"
-            android:textColor="#212121"
-        android:layout_marginBottom="4dp"/>
-        <EditText
-            android:id="@+id/et_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter password"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:backgroundTint="#B0BEC5"
-        android:layout_marginBottom="20dp"/>
+            android:textColor="@color/text_primary"
+            android:layout_marginBottom="6dp"/>
 
-        <!-- Login Button -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Enter password"
+                android:inputType="textPassword"
+                android:padding="14dp"
+                android:background="@drawable/edittext_background"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"/>
+
+            <ImageView
+                android:id="@+id/iv_show_password"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_visibility_off"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="12dp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Login"
-            android:backgroundTint="#4CAF50"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="20dp"/>
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_bg"
+            android:textColor="@color/white"
+            android:elevation="4dp"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
 
-        <!-- Register Link -->
         <TextView
             android:id="@+id/tv_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Don't have an account? Register"
             android:textSize="16sp"
-            android:textColor="#0288D1"
-        android:textAlignment="center"
-        android:layout_marginTop="8dp"/>
+            android:textColor="@color/accent"
+            android:textAlignment="center"
+            android:layout_marginTop="8dp"/>
 
     </LinearLayout>
 </ScrollView>
